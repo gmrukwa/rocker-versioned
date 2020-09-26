@@ -51,6 +51,13 @@ if [ "$USERID" -lt 1000 ]
     fi
 fi
 
+if [ -n "$WWW_ROOT_PATH" ]
+  then
+    echo "www-root-path=${WWW_ROOT_PATH}" >> /etc/rstudio/rserver.conf
+    echo "www-frame-origin=any" >> /etc/rstudio/rserver.conf
+    echo "www-same-site=none" >> /etc/rstudio/rserver.conf
+fi
+
 if [ "$USERID" -ne 1000 ]
 ## Configure user with a different USERID if requested.
   then
