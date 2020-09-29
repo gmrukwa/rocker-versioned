@@ -60,8 +60,8 @@ fi
 
 if [ -n "$WORKING_DIR" ]
   then
-    echo "session-default-working-dir=${WORKING_DIR}" >> /etc/rstudio/rserver.conf
-    echo "session-default-new-project-dir=${WORKING_DIR}" >> /etc/rstudio/rserver.conf
+    echo "session-default-working-dir=${WORKING_DIR}" >> /etc/rstudio/rsession.conf
+    echo "session-default-new-project-dir=${WORKING_DIR}" >> /etc/rstudio/rsession.conf
 fi
 
 if [ "$USERID" -ne 1000 ]
