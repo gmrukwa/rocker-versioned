@@ -58,6 +58,12 @@ if [ -n "$WWW_ROOT_PATH" ]
     echo "www-same-site=none" >> /etc/rstudio/rserver.conf
 fi
 
+if [ -n "$WORKING_DIR" ]
+  then
+    echo "session-default-working-dir=${WORKING_DIR}" >> /etc/rstudio/rserver.conf
+    echo "session-default-new-project-dir=${WORKING_DIR}" >> /etc/rstudio/rserver.conf
+fi
+
 if [ "$USERID" -ne 1000 ]
 ## Configure user with a different USERID if requested.
   then
