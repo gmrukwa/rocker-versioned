@@ -96,8 +96,6 @@ COPY disable_auth_rserver.conf /etc/rstudio/disable_auth_rserver.conf
 COPY pam-helper.sh /usr/lib/rstudio-server/bin/pam-helper
 
 COPY template.Rprofile /template.Rprofile
-RUN cat /template.Rprofile >> /usr/local/lib/R/etc/Rprofile.site \
-  && rm /template.Rprofile
 
 EXPOSE 8787
 
