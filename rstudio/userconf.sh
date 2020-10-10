@@ -114,3 +114,18 @@ fi
 ## add these to the global environment so they are avialable to the RStudio user
 echo "HTTR_LOCALHOST=$HTTR_LOCALHOST" >> /etc/R/Renviron.site
 echo "HTTR_PORT=$HTTR_PORT" >> /etc/R/Renviron.site
+
+if [ -n "$R_ADD_RSTHEME" ]
+  then
+    echo "R_ADD_RSTHEME=$R_ADD_RSTHEME" >> /usr/local/lib/R/etc/Renviron
+fi
+
+if [ -n "$R_ADD_TMTHEME" ]
+  then
+    echo "R_ADD_TMTHEME=$R_ADD_TMTHEME" >> /usr/local/lib/R/etc/Renviron
+fi
+
+if [ -n "$R_APPLY_THEME" ]
+  then
+    echo "R_APPLY_THEME=$R_APPLY_THEME" >> /usr/local/lib/R/etc/Renviron
+fi
