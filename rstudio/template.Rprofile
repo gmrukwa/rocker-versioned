@@ -6,7 +6,7 @@ cat("https://rstudio.github.io/packrat/walkthrough.html\n\n")
 
 setHook("rstudio.sessionInit", function(newSession) {
   if (newSession) {
-    library(rstudioapi)
+    library(rstudioapi, lib.loc="/usr/local/lib/R/site-library")
     .applyTheme <- function(){
       rsTheme <- Sys.getenv("R_ADD_RSTHEME")
       if (nchar(rsTheme) > 0) {
