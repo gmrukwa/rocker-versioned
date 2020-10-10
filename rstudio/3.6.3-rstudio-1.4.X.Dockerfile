@@ -85,7 +85,8 @@ RUN apt-get update \
           > /home/rstudio/.rstudio/monitored/user-settings/user-settings \
   && chown -R rstudio:rstudio /home/rstudio/.rstudio
 
-RUN Rscript -e 'install.packages("packrat")';
+RUN Rscript -e 'install.packages("packrat")' \
+  && Rscript -e 'install.packages("rstudioapi")';
 
 COPY userconf.sh /etc/cont-init.d/userconf
 

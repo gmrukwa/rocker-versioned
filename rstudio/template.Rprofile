@@ -1,4 +1,23 @@
 library(packrat)
-print("You can manage your R packages through packrat.")
-print("More info under this link:")
-print("https://rstudio.github.io/packrat/walkthrough.html")
+cat("You can manage your R packages through packrat.\n")
+cat("More info under this link: ")
+cat("https://rstudio.github.io/packrat/walkthrough.html\n\n")
+
+library(rstudioapi)
+{
+  rsTheme <- Sys.getenv("R_ADD_RSTHEME")
+  if (nchar(rsTheme) > 0) {
+    rstudioapi::addTheme(rsTheme)
+  }
+  
+  tmTheme <- Sys.getenv("R_ADD_TMTHEME")
+  if (nchar(tmTheme) > 0) {
+    rstudioapi::convertTheme(tmTheme)
+  }
+  
+  theme <- Sys.getenv("R_APPLY_THEME")
+  if (nchar(theme) > 0) {
+    rstudioapi::applyTheme(theme)
+  }
+}
+cat("You can select your startup theme through R_APPLY_THEME environment variable.\n\n")
